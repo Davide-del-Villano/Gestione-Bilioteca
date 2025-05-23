@@ -61,144 +61,110 @@ Il microservizio Gestione Biblioteca si occupa della gestione delle operazioni r
 
 ## API REST
 
-#############################################
-# Crea libro
-# @fun: createBook()
-# @param: BookDTO bookDTO
-# @return: ResponseEntity<BookDTO>
-#############################################
-POST /api/v1/books
+### Crea libro
+- **Funzione:** createBook()
+- **Input:** BookDTO bookDTO
+- **Output:** ResponseEntity<BookDTO>
+- **Endpoint:** POST /api/v1/books
 
-#############################################
-# Aggiorna libro
-# @fun: updateBook()
-# @param: Long id, BookDTO bookDTO
-# @return: ResponseEntity<BookDTO>
-#############################################
-PUT /api/v1/books/{id}
+### Aggiorna libro
+- **Funzione:** updateBook()
+- **Input:** Long id, BookDTO bookDTO
+- **Output:** ResponseEntity<BookDTO>
+- **Endpoint:** PUT /api/v1/books/{id}
 
-#############################################
-# Elimina libro
-# @fun: deleteBook()
-# @param: Long id
-# @return: ResponseEntity<Void>
-#############################################
-DELETE /api/v1/books/{id}
+### Elimina libro
+- **Funzione:** deleteBook()
+- **Input:** Long id
+- **Output:** ResponseEntity<Void>
+- **Endpoint:** DELETE /api/v1/books/{id}
 
-#############################################
-# Elenco libri
-# @fun: getBooks()
-# @param: Filtro (opzionale)
-# @return: List<BookDTO>
-#############################################
-GET /api/v1/books
+### Elenco libri
+- **Funzione:** getBooks()
+- **Input:** Filtro (opzionale)
+- **Output:** List<BookDTO>
+- **Endpoint:** GET /api/v1/books
 
-#############################################
-# Dettaglio libro
-# @fun: getBookById()
-# @param: Long id
-# @return: BookDTO
-#############################################
-GET /api/v1/books/{id}
+### Dettaglio libro
+- **Funzione:** getBookById()
+- **Input:** Long id
+- **Output:** BookDTO
+- **Endpoint:** GET /api/v1/books/{id}
 
-#############################################
-# Ricerca nel catalogo
-# @fun: searchCatalog()
-# @param: QueryParam (titolo, autore, ISBN)
-# @return: List<BookDTO>
-#############################################
-GET /api/v1/catalog/search
+### Ricerca nel catalogo
+- **Funzione:** searchCatalog()
+- **Input:** QueryParam (titolo, autore, ISBN)
+- **Output:** List<BookDTO>
+- **Endpoint:** GET /api/v1/catalog/search
 
-#############################################
-# Libri disponibili
-# @fun: getAvailableBooks()
-# @param: Nessuno
-# @return: List<BookDTO>
-#############################################
-GET /api/v1/catalog/available
+### Libri disponibili
+- **Funzione:** getAvailableBooks()
+- **Input:** Nessuno
+- **Output:** List<BookDTO>
+- **Endpoint:** GET /api/v1/catalog/available
 
-#############################################
-# Crea prenotazione
-# @fun: createReservation()
-# @param: Long bookId
-# @return: ReservationDTO
-# @note: Richiede ID utente dal microservizio utenti
-#############################################
-POST /api/v1/reservations
+### Crea prenotazione
+- **Funzione:** createReservation()
+- **Input:** Long bookId
+- **Output:** ReservationDTO
+- **Endpoint:** POST /api/v1/reservations
+- **Nota:** Richiede ID utente dal microservizio utenti
 
-#############################################
-# Elenco prenotazioni
-# @fun: getReservations()
-# @param: Nessuno
-# @return: List<ReservationDTO>
-# @note: Verifica ruolo utente tramite microservizio utenti
-#############################################
-GET /api/v1/reservations
+### Elenco prenotazioni
+- **Funzione:** getReservations()
+- **Input:** Nessuno
+- **Output:** List<ReservationDTO>
+- **Endpoint:** GET /api/v1/reservations
+- **Nota:** Verifica ruolo utente tramite microservizio utenti
 
-#############################################
-# Dettaglio prenotazione
-# @fun: getReservationById()
-# @param: Long id
-# @return: ReservationDTO
-#############################################
-GET /api/v1/reservations/{id}
+### Dettaglio prenotazione
+- **Funzione:** getReservationById()
+- **Input:** Long id
+- **Output:** ReservationDTO
+- **Endpoint:** GET /api/v1/reservations/{id}
 
-#############################################
-# Annulla prenotazione
-# @fun: cancelReservation()
-# @param: Long id
-# @return: ResponseEntity<Void>
-#############################################
-DELETE /api/v1/reservations/{id}
+### Annulla prenotazione
+- **Funzione:** cancelReservation()
+- **Input:** Long id
+- **Output:** ResponseEntity<Void>
+- **Endpoint:** DELETE /api/v1/reservations/{id}
 
-#############################################
-# Crea prestito
-# @fun: createLoan()
-# @param: LoanRequestDTO (bookId, userId)
-# @return: LoanDTO
-# @note: Verifica ID utente tramite microservizio utenti
-#############################################
-POST /api/v1/loans
+### Crea prestito
+- **Funzione:** createLoan()
+- **Input:** LoanRequestDTO (bookId, userId)
+- **Output:** LoanDTO
+- **Endpoint:** POST /api/v1/loans
+- **Nota:** Verifica ID utente tramite microservizio utenti
 
-#############################################
-# Registra restituzione libro
-# @fun: returnLoan()
-# @param: Long loanId
-# @return: LoanDTO
-#############################################
-PUT /api/v1/loans/{id}/return
+### Registra restituzione libro
+- **Funzione:** returnLoan()
+- **Input:** Long loanId
+- **Output:** LoanDTO
+- **Endpoint:** PUT /api/v1/loans/{id}/return
 
-#############################################
-# Elenco prestiti
-# @fun: getLoans()
-# @param: Nessuno
-# @return: List<LoanDTO>
-#############################################
-GET /api/v1/loans
+### Elenco prestiti
+- **Funzione:** getLoans()
+- **Input:** Nessuno
+- **Output:** List<LoanDTO>
+- **Endpoint:** GET /api/v1/loans
 
-#############################################
-# Dettaglio prestito
-# @fun: getLoanById()
-# @param: Long id
-# @return: LoanDTO
-#############################################
-GET /api/v1/loans/{id}
+### Dettaglio prestito
+- **Funzione:** getLoanById()
+- **Input:** Long id
+- **Output:** LoanDTO
+- **Endpoint:** GET /api/v1/loans/{id}
 
-#############################################
-# Prestiti in ritardo
-# @fun: getOverdueLoans()
-# @param: Nessuno
-# @return: List<LoanDTO>
-#############################################
-GET /api/v1/loans/overdue
+### Prestiti in ritardo
+- **Funzione:** getOverdueLoans()
+- **Input:** Nessuno
+- **Output:** List<LoanDTO>
+- **Endpoint:** GET /api/v1/loans/overdue
 
-#############################################
-# Richiesta prestito
-# @fun: requestLoan()
-# @param: Long bookId
-# @return: LoanRequestDTO con stato PENDING
-#############################################
-POST /api/v1/loans/request
+### Richiesta prestito
+- **Funzione:** requestLoan()
+- **Input:** Long bookId
+- **Output:** LoanRequestDTO con stato PENDING
+- **Endpoint:** POST /api/v1/loans/request
 
 ## Integrazione con Altri Microservizi
 
