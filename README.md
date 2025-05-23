@@ -21,8 +21,6 @@ Il microservizio Gestione Biblioteca si occupa della gestione delle operazioni r
 - Struttura: Spring Boot
 - Database: MySQL
 - Broker di messaggi: RabbitMQ
-- Containerizzazione: Docker
-- Orchestrazione: Kubernetes (non incluso in questa repository)
 - Documentazione API: Swagger / OpenAPI 3.0
 
 ## Modello dei Dati
